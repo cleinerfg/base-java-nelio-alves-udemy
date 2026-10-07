@@ -19,7 +19,13 @@ public class Program {
         System.out.println("After removing 3 products, new quantity: " + product.getQuantity());
 
         System.out.println("---------- To String ----------");
-
         System.out.println(product);
+
+        System.out.println("---------- Constructor Overcharging ----------");
+        Product product2 = new Product("Smartphone", 800.00);
+        System.out.println(product2);
+
+        product2.addProducts(5);
+        System.out.println("After adding 5 products: \n" + product2);
     }
 }
