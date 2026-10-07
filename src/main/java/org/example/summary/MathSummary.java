@@ -1,4 +1,4 @@
-package org.example;
+package org.example.summary;
 
 public class MathSummary {
 
