@@ -36,4 +36,14 @@ public class Product {
         return quantity * price;
     }
 
+    @Override
+    public String toString() {
+        return name
+                + ", $"
+                + String.format("%.2f", price)
+                + ", "
+                + quantity
+                + " units, Total: $"
+                + String.format("%.2f", totalInStock());
+    }
 }

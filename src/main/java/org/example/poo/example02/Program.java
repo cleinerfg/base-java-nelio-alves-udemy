@@ -17,5 +17,9 @@ public class Program {
 
         product.removeProducts(3);
         System.out.println("After removing 3 products, new quantity: " + product.getQuantity());
+
+        System.out.println("---------- To String ----------");
+
+        System.out.println(product);
     }
 }
