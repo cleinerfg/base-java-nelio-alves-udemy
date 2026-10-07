@@ -1,4 +1,4 @@
-package org.example.poo.example03.utils;
+package org.example.oop.example03.utils;
 
 public final class CurrencyConverter {
 

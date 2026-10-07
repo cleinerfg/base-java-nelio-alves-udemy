@@ -1,6 +1,6 @@
-package org.example.poo.example01;
+package org.example.oop.example01;
 
-import org.example.poo.example01.entities.Triangle;
+import org.example.oop.example01.entities.Triangle;
 
 public class Program {
 

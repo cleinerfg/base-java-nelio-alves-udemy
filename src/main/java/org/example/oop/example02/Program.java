@@ -1,6 +1,6 @@
-package org.example.poo.example02;
+package org.example.oop.example02;
 
-import org.example.poo.example02.entities.Product;
+import org.example.oop.example02.entities.Product;
 
 public class Program {
 

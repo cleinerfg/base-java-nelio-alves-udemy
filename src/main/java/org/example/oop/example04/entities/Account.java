@@ -1,4 +1,4 @@
-package org.example.poo.example04.entities;
+package org.example.oop.example04.entities;
 
 public class Account {
 

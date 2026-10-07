@@ -1,4 +1,4 @@
-package org.example.poo.example01.entities;
+package org.example.oop.example01.entities;
 
 public class Triangle {
 

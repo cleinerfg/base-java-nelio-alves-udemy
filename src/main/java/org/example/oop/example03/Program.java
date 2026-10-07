@@ -1,7 +1,7 @@
-package org.example.poo.example03;
+package org.example.oop.example03;
 
-import org.example.poo.example03.utils.Calculator;
-import org.example.poo.example03.utils.CurrencyConverter;
+import org.example.oop.example03.utils.Calculator;
+import org.example.oop.example03.utils.CurrencyConverter;
 
 public class Program {
 

@@ -1,4 +1,4 @@
-package org.example.poo.example02.entities;
+package org.example.oop.example02.entities;
 
 public class Product {
 
