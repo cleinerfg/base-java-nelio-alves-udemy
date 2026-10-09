@@ -4,17 +4,19 @@ import org.example.projects.bank.entities.Account;
 import org.example.projects.bank.entities.BusinessAccount;
 import org.example.projects.bank.entities.SavingsAccount;
 
+import java.util.List;
+
 public class App {
 
     public static void main(String[] args) {
 
-        Account acc = new Account(1001, "Alex", 0.0);
         BusinessAccount bacc = new BusinessAccount(1002, "Maria", 0.0, 500.0);
 
         // UPCASTING
-        Account acc1 = bacc;
         Account acc2 = new BusinessAccount(1003, "Bob", 0.0, 200.0);
-        Account acc3 = new SavingsAccount(1004, "Anna", 0.0, 0.01);
+        Account acc3 = new SavingsAccount(1004, "Anna", 220.5, 0.01);
+
+        List<Account> accounts = List.of(acc2, acc3, bacc);
 
         // DOWNCASTING
         BusinessAccount acc4 = (BusinessAccount) acc2;
@@ -41,5 +43,14 @@ public class App {
         System.out.println("After interest update, Balance: " + svAcc.getBalance());
         svAcc.withdraw(50.0);
         System.out.println("After withdrawal, Balance: " + svAcc.getBalance());
+
+        System.out.println("\n--- Polymorphism Demonstration ---");
+
+        double sum = 0.0;
+        for (Account acc : accounts) {
+            System.out.println("Account Holder: " + acc.getHolder() + ", Balance: " + acc.getBalance());
+            sum += acc.getBalance();
+        }
+        System.out.printf("Sum of all balances: %.2f\n", sum);
     }
 }
