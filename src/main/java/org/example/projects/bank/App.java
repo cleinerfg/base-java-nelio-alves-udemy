@@ -3,6 +3,8 @@ package org.example.projects.bank;
 import org.example.projects.bank.entities.Account;
 import org.example.projects.bank.entities.BusinessAccount;
 import org.example.projects.bank.entities.SavingsAccount;
+import org.example.projects.bank.exceptions.DailyWithdrawalLimitException;
+import org.example.projects.bank.exceptions.InsufficientFoundsException;
 
 import java.util.List;
 
@@ -52,5 +54,38 @@ public class App {
             sum += acc.getBalance();
         }
         System.out.printf("Sum of all balances: %.2f\n", sum);
+
+        System.out.println("\n Throwing an Exception ---");
+
+        Account busAcc = new BusinessAccount(1005, "John", 1000.0, 100.0);
+
+        try {
+            System.out.println("Initial balance: " + busAcc.getBalance());
+
+            System.out.println("--- Try withdraw bigger than balance ");
+            busAcc.withdraw(2000.0);
+        } catch (InsufficientFoundsException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            System.out.println("--- Exceeding withdrawal limit ---");
+            System.out.println("Withdrawal limit: " + Account.DAILY_WITHDRAW_LIMIT);
+
+            busAcc.withdraw(400.0);
+            System.out.println("Balance after the 400 withdrawal: " + busAcc.getBalance());
+            System.out.println("Total daily withdrawn: " + busAcc.getTotalDailyWithdrawn());
+            busAcc.withdraw(100.0);
+            System.out.println("Balance after the 100 withdrawal: " + busAcc.getBalance());
+            System.out.println("Total daily withdrawn: " + busAcc.getTotalDailyWithdrawn());
+
+            System.out.println("Trying a withdraw, after exceeding withdrawal limit:");
+            busAcc.withdraw(1.0);
+
+        } catch (DailyWithdrawalLimitException e) {
+            System.out.println(e.getMessage());
+        }
+
+
     }
 }
