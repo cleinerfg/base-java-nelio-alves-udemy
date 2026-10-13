@@ -2,7 +2,7 @@ package org.example.projects.geometricshapes.entities;
 
 import org.example.projects.geometricshapes.entities.enums.Color;
 
-public class Rectangle extends Shape {
+public class Rectangle extends AbstractShape {
 
     private Double width;
     private Double height;
